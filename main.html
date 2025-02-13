@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine Day By Prashant 💋</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(-3deg);
+            }
+
+            50% {
+                transform: rotate(3deg);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes fallingSlow {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+            }
+
+            50% {
+                box-shadow: 0 0 50px rgba(255, 105, 180, 1);
+            }
+
+            100% {
+                box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+            }
+        }
+
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+            }
+
+            50% {
+                text-shadow: 0 0 30px #ff69b4, 0 0 40px #ff69b4;
+            }
+
+            100% {
+                text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+            }
+        }
+
+        @keyframes bubblePop {
+            0% {
+                transform: scale(1);
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            background: linear-gradient(145deg, #ff9a9e, #fad0c4, #ffd1ff);
+            font-family: 'Pacifico', sans-serif;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .kiss-animation {
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .wiggle-text {
+            animation: wiggle 2s infinite ease-in-out;
+        }
+
+        .heartbeat {
+            animation: heartbeat 1.5s infinite ease-in-out;
+        }
+
+        .falling {
+            animation: fallingSlow 8s linear infinite;
+            position: absolute;
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 1.5s infinite ease-in-out;
+        }
+
+        .text-glow {
+            animation: textGlow 3s infinite ease-in-out;
+        }
+
+        .love-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+            border-radius: 50%;
+            font-size: clamp(16px, 4vw, 20px);
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: clamp(2rem, 8vw, 6rem);
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 15px;
+            animation: textGlow 3s infinite, fadeInUp 1s ease-out;
+            font-family: 'Bubblegum Sans', sans-serif;
+        }
+
+        .heart-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            width: 100%;
+        }
+
+        .falling-heart {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            position: absolute;
+            animation: bubblePop 3s linear infinite;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            color: white;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .message-container {
+            margin-bottom: 50px;
+            text-align: center;
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+            opacity: 0;
+            width: 100%;
+            max-width: 600px;
+            padding: 0 15px;
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            text-align: center;
+            color: #ff69b4;
+            backdrop-filter: blur(10px);
+            width: 100%;
+            box-sizing: border-box;
+            animation: pulseGlow 2s infinite;
+            margin-bottom: 15px;
+        }
+
+        .kiss-button {
+            background: linear-gradient(45deg, #ff6ec7, #ff9e2c);
+            color: white;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            border-radius: 50px;
+            padding: 15px 30px;
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .kiss-button:hover {
+            background: linear-gradient(45deg, #ff9e2c, #ff6ec7);
+            box-shadow: 0 0 50px rgba(255, 105, 180, 1);
+            transform: scale(1.1);
+        }
+
+        .play-button {
+            background: #ff477e;
+            color: white;
+            font-size: clamp(2rem, 6vw, 3rem);
+            border-radius: 50px;
+            padding: 15px 30px;
+            margin-top: 30px;
+            animation: pulseGlow 1.5s infinite, fadeInUp 1s ease-out 0.9s forwards;
+            opacity: 0;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .play-button:hover {
+            background: #ff2a61;
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 105, 180, 1);
+        }
+
+        .kiss-counter {
+            font-size: clamp(2rem, 6vw, 3rem);
+            color: #ff69b4;
+        }
+
+        .floating-heart {
+            position: absolute;
+            animation: bubblePop 4s ease-in-out infinite;
+            font-size: clamp(30px, 8vw, 50px);
+        }
+
+        .gif-message-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1000;
+            display: none;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .gif-message-container img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .gif-message-container .message-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            color: #ff69b4;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+        }
+
+
+
+        @media (max-width: 480px) {
+            .content-container {
+                padding: 5px;
+            }
+
+            .message-box {
+                padding: 15px;
+            }
+
+            .kiss-button,
+            .play-button {
+                padding: 10px 20px;
+            }
+
+            .gif-message-container {
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hearts-container" class="heart-container"></div>
+
+    <div class="content-container">
+        <h1>Happy Valentine Day, Madam Ji! 🫣</h1>
+
+        <div class="message-container">
+            <div id="message-display" class="message-box">I love you for all that you are💝, all that you have been🙈
+                <br />
+                and
+                all that you will be<span id="kiss-counter" class="kiss-counter">😘</span>
+            </div>
+            <p class="message-box">I still don't feel worthy of your love, but I'm doing everything I can to deserve
+                it.
+                I'm extremely grateful to have you in my life. Thank you for giving your heart to me. Happy Valentine's
+                Day, love. </p>
+        </div>
+
+        <button id="kiss-button" class="love-button kiss-button">
+            Tap for a beautiful Surprise !!
+        </button>
+
+        <button id="play-button" class="love-button play-button">
+            Let's Play a Game! 💋
+        </button>
+    </div>
+
+    <div id="gif-message-container" class="gif-message-container">
+        <img id="random-gif" src="" alt="Love Gif">
+        <div id="random-message" class="message-box"></div>
+    </div>
+
+    <script>
+        const messagesAndGifs = [
+            { message: "A little surprise, just for you! 🎉", gif: 'surprise.gif' },
+            { message: "Maya! You light up my world! 💖", gif: 'love-always.gif' },
+            { message: "You're the reason my heart beats! 💕", gif: 'cake.gif' },
+            { message: "Here comes a million kisses for you! 💋", gif: 'mine.gif' },
+            // { message: "Here comes a million kisses for you! 💋", gif: 'hug.gif' },
+            { message: "You're only mine, my honeybunch sugarplum! 💗", gif: 'scared.gif' },
+            { message: "Every second with you feels magical! 💫", gif: 'kiss.gif' },
+            { message: "My love for you is endless, Babe! 😘", gif: 'cute.gif' },
+            { message: "You're my everything, my sweetest Pookie! 💗", gif: 'hug.gif' },
+            { message: "You're the queen of my heart, always! 👑", gif: 'hug.gif' },
+            { message: "I love you Forever and Ever, sweetie pie", gif: 'sorry-kiss.gif' }
+        ];
+        // Maya! You light up my world! 💖
+        // Function to create falling hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            const symbols = ['💕', '💖', '💗', '💝', '💋', '✨', '🌸', '💘'];
+            heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+            heart.className = 'falling-heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            document.getElementById('hearts-container').appendChild(heart);
+            setTimeout(() => heart.remove(), 8000);
+        }
+        // Function to show a new message and gif on the screen
+        let currentIndex = 0;
+        function showGifMessage() {
+            const messageAndGif = messagesAndGifs[currentIndex];
+            const gifMessageContainer = document.getElementById('gif-message-container');
+            const randomMessage = document.getElementById('random-message');
+            const randomGifImg = document.getElementById('random-gif');
+            const messageContainer = document.querySelector('.message-container');
+            const kissButton = document.getElementById('kiss-button');
+            const playButton = document.getElementById('play-button');
+
+            // Disable button and update text
+            kissButton.disabled = true;
+
+            // Wait for the GIF to load before showing
+            randomGifImg.onload = function () {
+                randomMessage.innerHTML = messageAndGif.message;
+                randomGifImg.style.width = '400px';
+                randomGifImg.style.height = 'auto';
+
+                if (messageContainer) {
+                    messageContainer.style.visibility = 'hidden';
+                }
+
+                gifMessageContainer.style.display = 'block';
+                if (window.innerWidth <= 768) {
+                    gifMessageContainer.style.transform = 'translate(-150px, -140px)';
+                } else {
+                    gifMessageContainer.style.transform = 'translate(-200px, -180px)';
+                }
+
+                const hideTimeout = setTimeout(() => {
+                    gifMessageContainer.style.display = 'none';
+                    gifMessageContainer.style.transform = '';
+                    if (messageContainer) {
+                        messageContainer.style.visibility = 'visible';
+                    }
+                    kissButton.disabled = false;
+                    const buttonTexts = [
+                        'Send More Kisses! 💋',
+                        'Keep Kissing! 😘',
+                        'Spread More Love! 💖',
+                        'Kiss Me Again! 💝',
+                        'Love You More! 💗',
+                        'One More Kiss! 😚',
+                        'Almost Yours! 💘',
+                        'Keep Loving! 💓',
+                        'Forever Yours! 💘'
+                    ];
+                    kissButton.textContent = buttonTexts[currentIndex % buttonTexts.length];
+
+                    // Check if we've shown all messages
+                    if (currentIndex >= messagesAndGifs.length - 1) {
+                        kissButton.style.display = 'none';
+                        playButton.style.display = 'block';
+                    }
+                }, 3000);
+            };
+
+            // Set the src after setting up onload handler
+            randomGifImg.src = messageAndGif.gif;
+            currentIndex = (currentIndex + 1);
+        }
+        // Event listener for "Tap for a Surprise Kiss!" button
+        document.getElementById('kiss-button').addEventListener('click', (e) => {
+            showGifMessage(); // Call show gif and message function to display a new message and gif
+        });
+        // Initially hide the play button
+        document.getElementById('play-button').style.display = 'none';
+
+        function createKissEffect(e) {
+            const kiss = document.createElement('div');
+            kiss.innerHTML = '💋';
+            kiss.className = 'kiss-animation fixed text-5xl';
+            kiss.style.left = e.clientX + 'px';
+            kiss.style.top = e.clientY + 'px';
+            document.body.appendChild(kiss);
+            setTimeout(() => kiss.remove(), 8000);
+        }
+
+
+
+        // Event listener for "Let's Play a Game!" button
+        document.getElementById('play-button').addEventListener('click', () => {
+            document.body.style.transition = 'opacity 1s';
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = 'game.html'; // Redirect to game page
+            }, 1000);
+        });
+
+        // Initial creation of hearts when page loads
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createHeart, i * 400); // Create hearts with some delay
+        }
+
+        // Continuously create falling hearts every 800ms
+        setInterval(createHeart, 800);
+    </script>
+</body>
+
+</html>

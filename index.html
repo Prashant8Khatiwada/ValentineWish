@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine Day By Prashant</title>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #78e08f, #60a67b);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Pacifico', cursive;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+      background: linear-gradient(45deg, #ff0000, #ff7300, #ff00ff, #ff1493);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: glowText 3s infinite linear;
+      text-shadow: 0 0 15px rgba(255, 0, 0, 0.6),
+        0 0 25px rgba(255, 105, 180, 0.8),
+        0 0 35px rgba(255, 20, 147, 1);
+    }
+
+    @keyframes glowText {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .button-container {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 40px;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      text-transform: uppercase;
+      background: linear-gradient(45deg, #ff0000, #ff7300, #ff00ff, #ff1493);
+      background-size: 400% 400%;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.8),
+        0 0 25px rgba(255, 105, 180, 0.8),
+        0 0 35px rgba(255, 20, 147, 1);
+      animation: glowButton 3s infinite linear;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.9),
+        0 0 30px rgba(255, 105, 180, 0.9),
+        0 0 40px rgba(255, 20, 147, 1);
+    }
+
+    @keyframes glowButton {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      .button {
+        padding: 12px 30px;
+        font-size: 18px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Happy Valentine Day</h1>
+  <img src="kiss-licks.gif" alt="Valentine Kiss" style="display: block; margin: 20px auto; max-width: 200px;">
+  <div class="button-container">
+    <button class="button" onclick="window.location.href='main.html'">Click Me</button>
+  </div>
+
+</body>
+
+</html>
